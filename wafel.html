@@ -1,0 +1,57 @@
+<head>
+  <title>Admin Panel</title>
+</head>
+
+<body>
+  {{> adminPanel}}
+</body>
+
+<template name="adminPanel">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="row">
+				<div class="span12">
+					<table class="table table-striped table-condensed table-bordered">
+						<thead>
+							<tr>
+								<td>Client</td>
+								<td>Can Price</td>
+								<td>Box Prices</td>
+							</tr>
+						</thead>
+						<tbody>
+							{{#each clientsPriceList}}
+							<tr>
+								<td>{{client}}</td>
+								<td>{{canPrice}}</td>
+								<td>{{boxPrice}}</td>
+								<td>
+									<button class="remove">
+										Remove
+									</button>
+								</td>
+							</tr>
+							{{/each}}
+							<tr>
+								<td>
+									<input type="text" name="client" value="" id="client">
+								</td>
+								<td>
+									<input type="text" name="canPrice" value="" id="canPrice">
+								</td>
+								<td>
+									<input type="text" name="boxPrice" value="" id="boxPrice">
+								</td>
+								<td>
+									<button class="add">
+										Add
+									</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
